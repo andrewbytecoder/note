@@ -225,12 +225,22 @@
             "state": {
               "type": "todo",
               "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
+            }
+          },
+          {
+            "id": "fd6bf9103ecfb71a",
+            "type": "leaf",
+            "state": {
+              "type": "todo",
+              "state": {},
               "icon": "checkmark",
               "title": "Todo List"
             }
           }
         ],
-        "currentTab": 8
+        "currentTab": 9
       }
     ],
     "direction": "horizontal",
@@ -253,7 +263,7 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "0e513463a135bda7",
+  "active": "fd6bf9103ecfb71a",
   "lastOpenFiles": [
     "架构/redis.md",
     "未命名 1.md",
