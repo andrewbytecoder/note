@@ -11,12 +11,14 @@
             "id": "704e1297a1b5aa1a",
             "type": "leaf",
             "state": {
-              "type": "mindmapView",
+              "type": "markdown",
               "state": {
-                "file": "mindmap/性能优化.md"
+                "file": "linux/命令行.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "blocks",
-              "title": "性能优化"
+              "icon": "lucide-file",
+              "title": "命令行"
             }
           }
         ]
@@ -238,8 +240,8 @@
   },
   "active": "704e1297a1b5aa1a",
   "lastOpenFiles": [
-    "mindmap/BC31556.tmp",
     "mindmap/性能优化.md",
+    "mindmap/BC31556.tmp",
     "linux/组件.md",
     "linux/vim.md",
     "k8s/kubernetes/命令.md",
@@ -283,7 +285,6 @@
     "k8s/kubernetes/attachments",
     "k8s/etcd",
     "Excalidraw/Scripts/Downloaded",
-    "utils/attachments",
     "canvas.canvas"
   ]
 }
