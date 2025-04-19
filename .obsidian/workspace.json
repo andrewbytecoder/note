@@ -11,12 +11,14 @@
             "id": "704e1297a1b5aa1a",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "Excalidraw/kube-prometheus.excalidraw.md"
+                "file": "k8s/网络/calico.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "excalidraw-icon",
-              "title": "kube-prometheus.excalidraw"
+              "icon": "lucide-file",
+              "title": "calico"
             }
           }
         ]
@@ -235,8 +237,10 @@
       "periodic-notes:Open today": false
     }
   },
-  "active": "704e1297a1b5aa1a",
+  "active": "ffa890cc37419301",
   "lastOpenFiles": [
+    "k8s/网络",
+    "Excalidraw/kube-prometheus.excalidraw.md",
     "Excalidraw/k8s.excalidraw.md",
     "Excalidraw/ebpf.excalidraw.md",
     "go/go.md",
@@ -263,7 +267,6 @@
     "Excalidraw/redis.md",
     "架构",
     "Excalidraw/未命名.md",
-    "Excalidraw/kube-prometheus.excalidraw.md",
     "utils/信息记录.md",
     "工作记录.md",
     "未命名.md",
