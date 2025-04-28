@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "calico"
             }
+          },
+          {
+            "id": "6b7889816b5c899d",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "架构/kubernetes.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "kubernetes.excalidraw"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -53,7 +66,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "mount",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,7 +91,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 335.5
+    "width": 211.5
   },
   "right": {
     "id": "208dd91899ac8bed",
@@ -217,7 +230,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -239,52 +253,52 @@
   },
   "active": "ffa890cc37419301",
   "lastOpenFiles": [
-    "k8s/网络",
-    "Excalidraw/kube-prometheus.excalidraw.md",
+    "架构/kubernetes.excalidraw.md",
+    "架构/kubernetes.md",
+    "k8s/kubernetes/基础知识.md",
+    "k8s/kubernetes/命令.md",
+    "k8s/etcd/etcd.md",
+    "k8s/docker/docker加载的软件.md",
+    "Excalidraw/calico.excalidraw.md",
     "Excalidraw/k8s.excalidraw.md",
-    "Excalidraw/ebpf.excalidraw.md",
+    "Excalidraw/kube-prometheus.excalidraw.md",
+    "架构/attachments/Pasted image 20250428150436.png",
+    "k8s/网络/calico.md",
+    "Excalidraw/Scripts/Downloaded/Expand rectangles horizontally keep text centered.md",
+    "架构/redis.md",
+    "架构/redis.excalidraw.md",
+    "k8s/prometheus/prometheus基础.md",
+    "k8s/prometheus/Alertmanager.md",
+    "k8s/prometheus/kube-prometheus.md",
     "go/go.md",
+    "Excalidraw/ebpf.excalidraw.md",
+    "工作记录.md",
+    "工作看板.md",
     "utils/工具集.md",
+    "utils/attachments/Pasted image 20250425133357.png",
+    "utils/git.md",
+    "go/pprof.md",
+    "k8s/prometheus/attachments/Pasted image 20250423170607.png",
+    "Excalidraw/Scripts/Downloaded/PDF Page Text to Clipboard.svg",
+    "Excalidraw/Scripts/Downloaded/PDF Page Text to Clipboard.md",
+    "Excalidraw/Scripts/Downloaded/Organic Line.svg",
+    "Excalidraw/Scripts/Downloaded/Organic Line.md",
+    "k8s/网络",
     "utils/attachments/Pasted image 20250416113822.png",
     "shorthand/2024-12-31.md",
-    "问题猜测.md",
-    "工作看板.md",
-    "linux/git.md",
-    "utils/wireshark.md",
-    "Calendar/2025-04-13.md",
-    "mindmap/性能优化.md",
-    "linux/组件.md",
-    "linux/命令行.md",
     "mindmap/BC31556.tmp",
-    "linux/vim.md",
-    "k8s/kubernetes/命令.md",
-    "k8s/prometheus/Alertmanager.md",
-    "k8s/kubernetes/网络.md",
-    "架构/redis.md",
-    "未命名 1.md",
     "架构/attachments/Pasted image 20250408091731.png",
     "架构/attachments",
-    "Excalidraw/redis.md",
     "架构",
-    "Excalidraw/未命名.md",
-    "utils/信息记录.md",
-    "工作记录.md",
-    "未命名.md",
     "mindmap",
     "Excalidraw/attachments/Pasted Image 20250302175307_001.png",
     "Excalidraw/attachments",
     "k8s/kubernetes/attachments/image-20250124145039510.png",
     "k8s/prometheus/attachments/Pasted image 20250225210010.png",
-    "k8s/prometheus/attachments/Pasted image 20250225202348.png",
-    "k8s/prometheus/attachments/Pasted image 20250225201905.png",
-    "k8s/kubernetes/attachments/image-20250124150650074.png",
-    "k8s/kubernetes/attachments/Pasted image 20250207111351.png",
-    "k8s/kubernetes/attachments/Pasted image 20250207111214.png",
     "linux/attachments",
     "k8s/docker",
     "k8s/kubernetes/attachments",
     "k8s/etcd",
-    "Excalidraw/Scripts/Downloaded",
     "canvas.canvas"
   ]
 }

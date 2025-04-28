@@ -22,6 +22,17 @@
 http://10.161.40.240:30090/config
 ```
 
+### 查看rules
+通过访问网址：ip:port/rules可以查看一些规则设置
+
+### 查看 `alert`
+
+通过访问网页：ip:port/alerts可以查看报警规则设置
+
+
+### 查看pprof
+
+通过查看网页： `ip:port/debug/pprof` 能查看prometheus pprof数据，用于性能问题排查
 
 
 
