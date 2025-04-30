@@ -39,12 +39,14 @@
             "id": "5fabc9a6f801e886",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "架构/微服务设计.excalidraw.md"
+                "file": "k8s/kubernetes/基础知识.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "excalidraw-icon",
-              "title": "微服务设计.excalidraw"
+              "icon": "lucide-file",
+              "title": "基础知识"
             }
           }
         ],
@@ -167,12 +169,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "k8s/kubernetes/基础知识.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "基础知识 的大纲"
             }
           },
           {
@@ -240,12 +243,11 @@
             }
           }
         ],
-        "currentTab": 9
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -261,14 +263,13 @@
       "obsidian-advanced-slides:Show Slide Preview": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
       "obsidian-kanban:创建新看板": false,
-      "obsidian-full-calendar:Open Full Calendar": false,
-      "periodic-notes:Open today": false
+      "obsidian-full-calendar:Open Full Calendar": false
     }
   },
-  "active": "ffa890cc37419301",
+  "active": "d29d5b60e291e4d7",
   "lastOpenFiles": [
-    "Excalidraw/ebpf.excalidraw.md",
     "架构/微服务设计.excalidraw.md",
+    "Excalidraw/ebpf.excalidraw.md",
     "架构/微服务设计.md",
     "架构/redis.md",
     "架构/kubernetes.md",
