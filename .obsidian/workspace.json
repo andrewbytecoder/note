@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "架构/redis.md",
+                "file": "Calendar/2025-02-12.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "redis"
+              "title": "2025-02-12"
             }
           }
         ],
@@ -73,7 +73,7 @@
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
-              "title": "文件列表"
+              "title": "Files"
             }
           },
           {
@@ -169,13 +169,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "架构/redis.md",
+                "file": "Calendar/2025-02-12.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "redis 的大纲"
+              "title": "Outline of 2025-02-12"
             }
           },
           {
@@ -251,24 +251,28 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:打开快速切换": false,
-      "graph:查看关系图谱": false,
-      "canvas:新建白板": false,
-      "daily-notes:打开/创建今天的日记": false,
-      "templates:插入模板": false,
-      "command-palette:打开命令面板": false,
-      "markdown-importer:打开 Markdown 格式转换器": false,
-      "random-note:开始漫游笔记": false,
-      "obsidian-excalidraw-plugin:新建绘图文件": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "markdown-importer:Open format converter": false,
+      "random-note:Open random note": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "obsidian-kanban:Create new board": false,
       "obsidian-advanced-slides:Show Slide Preview": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "obsidian-kanban:创建新看板": false,
-      "obsidian-full-calendar:Open Full Calendar": false,
-      "periodic-notes:Open today": false
+      "obsidian-full-calendar:Open Full Calendar": false
     }
   },
   "active": "5fabc9a6f801e886",
   "lastOpenFiles": [
+    "Calendar/2025-02-20.md",
+    "Calendar/2025-02-12.md",
+    "Calendar/2025-04-13.md",
+    "Calendar/2025-02-17.md",
+    "架构/redis.md",
     "架构/attachments/Pasted image 20250506223922.png",
     "架构/attachments/Pasted image 20250506223828.png",
     "k8s/kubernetes/基础知识.md",
@@ -277,7 +281,6 @@
     "架构/微服务设计.excalidraw.md",
     "Excalidraw/ebpf.excalidraw.md",
     "架构/微服务设计.md",
-    "架构/redis.md",
     "架构/kubernetes.md",
     "工作记录.md",
     "go/go.md",
@@ -296,17 +299,13 @@
     "k8s/prometheus/prometheus基础.md",
     "k8s/prometheus/Alertmanager.md",
     "k8s/prometheus/kube-prometheus.md",
-    "utils/工具集.md",
     "utils/attachments/Pasted image 20250425133357.png",
-    "utils/git.md",
-    "go/pprof.md",
     "k8s/prometheus/attachments/Pasted image 20250423170607.png",
     "Excalidraw/Scripts/Downloaded/PDF Page Text to Clipboard.svg",
     "Excalidraw/Scripts/Downloaded/Organic Line.svg",
     "k8s/网络",
     "utils/attachments/Pasted image 20250416113822.png",
     "mindmap/BC31556.tmp",
-    "架构/attachments/Pasted image 20250408091731.png",
     "架构/attachments",
     "架构",
     "mindmap",
