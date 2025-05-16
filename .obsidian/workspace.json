@@ -11,14 +11,12 @@
             "id": "704e1297a1b5aa1a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "mindmapView",
               "state": {
-                "file": "k8s/kubernetes/命令.md",
-                "mode": "source",
-                "source": false
+                "file": "mindmap/性能优化.md"
               },
-              "icon": "lucide-file",
-              "title": "命令"
+              "icon": "blocks",
+              "title": "性能优化"
             }
           }
         ]
@@ -44,7 +42,7 @@
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
-              "title": "文件列表"
+              "title": "Files"
             }
           },
           {
@@ -61,7 +59,7 @@
                 "sortOrder": "alphabetical"
               },
               "icon": "lucide-search",
-              "title": "搜索"
+              "title": "Search"
             }
           },
           {
@@ -74,8 +72,7 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -141,13 +138,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "k8s/kubernetes/命令.md",
+                "file": "mindmap/性能优化.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "命令 的大纲"
+              "title": "Outline of 性能优化"
             }
           },
           {
@@ -223,33 +220,37 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:打开快速切换": false,
-      "graph:查看关系图谱": false,
-      "canvas:新建白板": false,
-      "daily-notes:打开/创建今天的日记": false,
-      "templates:插入模板": false,
-      "command-palette:打开命令面板": false,
-      "markdown-importer:打开 Markdown 格式转换器": false,
-      "random-note:开始漫游笔记": false,
-      "obsidian-excalidraw-plugin:新建绘图文件": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "markdown-importer:Open format converter": false,
+      "random-note:Open random note": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "obsidian-kanban:Create new board": false,
       "obsidian-advanced-slides:Show Slide Preview": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "obsidian-kanban:创建新看板": false,
-      "obsidian-full-calendar:Open Full Calendar": false,
-      "periodic-notes:Open today": false
+      "obsidian-full-calendar:Open Full Calendar": false
     }
   },
   "active": "704e1297a1b5aa1a",
   "lastOpenFiles": [
+    "linux/vim.md",
+    "linux/组件.md",
+    "linux/命令行.md",
+    "k8s/prometheus/Alertmanager.md",
+    "k8s/kubernetes/基础知识.md",
+    "go/pprof.md",
     "go/go code.md",
     "go/go.md",
+    "k8s/kubernetes/命令.md",
     "k8s/网络/calico.md",
     "架构/微服务设计.md",
-    "k8s/kubernetes/命令.md",
     "架构/redis.md",
     "架构/attachments/Pasted image 20250506223922.png",
     "架构/attachments/Pasted image 20250506223828.png",
-    "k8s/kubernetes/基础知识.md",
     "架构/attachments/Pasted image 20250505233124.png",
     "架构/attachments/Pasted image 20250505230730.png",
     "架构/微服务设计.excalidraw.md",
@@ -267,12 +268,7 @@
     "Excalidraw/Scripts/Downloaded/Expand rectangles horizontally keep text centered.md",
     "架构/redis.excalidraw.md",
     "k8s/prometheus/prometheus基础.md",
-    "k8s/prometheus/Alertmanager.md",
-    "k8s/prometheus/kube-prometheus.md",
-    "utils/工具集.md",
     "utils/attachments/Pasted image 20250425133357.png",
-    "utils/git.md",
-    "go/pprof.md",
     "k8s/prometheus/attachments/Pasted image 20250423170607.png",
     "Excalidraw/Scripts/Downloaded/PDF Page Text to Clipboard.svg",
     "Excalidraw/Scripts/Downloaded/Organic Line.svg",
