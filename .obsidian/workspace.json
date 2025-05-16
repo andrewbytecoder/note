@@ -11,14 +11,12 @@
             "id": "704e1297a1b5aa1a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "mindmapView",
               "state": {
-                "file": "k8s/kubernetes/命令.md",
-                "mode": "source",
-                "source": false
+                "file": "mindmap/性能优化.md"
               },
-              "icon": "lucide-file",
-              "title": "命令"
+              "icon": "blocks",
+              "title": "性能优化"
             }
           }
         ]
@@ -74,8 +72,7 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -141,13 +138,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "k8s/kubernetes/命令.md",
+                "file": "mindmap/性能优化.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "命令 的大纲"
+              "title": "性能优化 的大纲"
             }
           },
           {
@@ -241,11 +238,14 @@
   },
   "active": "704e1297a1b5aa1a",
   "lastOpenFiles": [
+    "k8s/网络/calico.md",
+    "k8s/docker/docker加载的软件.md",
+    "linux/命令行.md",
+    "mindmap/性能优化.md",
+    "k8s/kubernetes/命令.md",
     "go/go code.md",
     "go/go.md",
-    "k8s/网络/calico.md",
     "架构/微服务设计.md",
-    "k8s/kubernetes/命令.md",
     "架构/redis.md",
     "架构/attachments/Pasted image 20250506223922.png",
     "架构/attachments/Pasted image 20250506223828.png",
@@ -259,7 +259,6 @@
     "工作看板.md",
     "架构/kubernetes.excalidraw.md",
     "k8s/etcd/etcd.md",
-    "k8s/docker/docker加载的软件.md",
     "Excalidraw/calico.excalidraw.md",
     "Excalidraw/k8s.excalidraw.md",
     "Excalidraw/kube-prometheus.excalidraw.md",
@@ -271,8 +270,6 @@
     "k8s/prometheus/kube-prometheus.md",
     "utils/工具集.md",
     "utils/attachments/Pasted image 20250425133357.png",
-    "utils/git.md",
-    "go/pprof.md",
     "k8s/prometheus/attachments/Pasted image 20250423170607.png",
     "Excalidraw/Scripts/Downloaded/PDF Page Text to Clipboard.svg",
     "Excalidraw/Scripts/Downloaded/Organic Line.svg",
