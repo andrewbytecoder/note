@@ -42,7 +42,7 @@
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
-              "title": "Files"
+              "title": "文件列表"
             }
           },
           {
@@ -59,7 +59,7 @@
                 "sortOrder": "alphabetical"
               },
               "icon": "lucide-search",
-              "title": "Search"
+              "title": "搜索"
             }
           },
           {
@@ -144,7 +144,7 @@
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 性能优化"
+              "title": "性能优化 的大纲"
             }
           },
           {
@@ -220,37 +220,36 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "markdown-importer:Open format converter": false,
-      "random-note:Open random note": false,
-      "obsidian-excalidraw-plugin:New drawing": false,
-      "obsidian-kanban:Create new board": false,
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "markdown-importer:打开 Markdown 格式转换器": false,
+      "random-note:开始漫游笔记": false,
+      "obsidian-excalidraw-plugin:新建绘图文件": false,
       "obsidian-advanced-slides:Show Slide Preview": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "obsidian-full-calendar:Open Full Calendar": false
+      "obsidian-kanban:创建新看板": false,
+      "obsidian-full-calendar:Open Full Calendar": false,
+      "periodic-notes:Open today": false
     }
   },
   "active": "704e1297a1b5aa1a",
   "lastOpenFiles": [
-    "linux/vim.md",
-    "linux/组件.md",
+    "k8s/网络/calico.md",
+    "k8s/docker/docker加载的软件.md",
     "linux/命令行.md",
-    "k8s/prometheus/Alertmanager.md",
-    "k8s/kubernetes/基础知识.md",
-    "go/pprof.md",
+    "mindmap/性能优化.md",
+    "k8s/kubernetes/命令.md",
     "go/go code.md",
     "go/go.md",
-    "k8s/kubernetes/命令.md",
-    "k8s/网络/calico.md",
     "架构/微服务设计.md",
     "架构/redis.md",
     "架构/attachments/Pasted image 20250506223922.png",
     "架构/attachments/Pasted image 20250506223828.png",
+    "k8s/kubernetes/基础知识.md",
     "架构/attachments/Pasted image 20250505233124.png",
     "架构/attachments/Pasted image 20250505230730.png",
     "架构/微服务设计.excalidraw.md",
@@ -260,7 +259,6 @@
     "工作看板.md",
     "架构/kubernetes.excalidraw.md",
     "k8s/etcd/etcd.md",
-    "k8s/docker/docker加载的软件.md",
     "Excalidraw/calico.excalidraw.md",
     "Excalidraw/k8s.excalidraw.md",
     "Excalidraw/kube-prometheus.excalidraw.md",
@@ -268,6 +266,9 @@
     "Excalidraw/Scripts/Downloaded/Expand rectangles horizontally keep text centered.md",
     "架构/redis.excalidraw.md",
     "k8s/prometheus/prometheus基础.md",
+    "k8s/prometheus/Alertmanager.md",
+    "k8s/prometheus/kube-prometheus.md",
+    "utils/工具集.md",
     "utils/attachments/Pasted image 20250425133357.png",
     "k8s/prometheus/attachments/Pasted image 20250423170607.png",
     "Excalidraw/Scripts/Downloaded/PDF Page Text to Clipboard.svg",
