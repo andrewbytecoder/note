@@ -1,0 +1,257 @@
+---
+
+mindmap-plugin: basic
+
+---
+
+# go
+
+## 云计算 ^4e28324c-c076-94c8
+- 容器
+	- moby
+	- k8s
+	- rkt
+	- gvisor
+	- rancher
+	- runc
+	- gistribution
+- 注册服务
+	- registrator
+	- harbor
+- 访问框架
+	- go-cloud
+	- go-github
+
+## 中间件 ^9d6d2732-2a5a-3854
+- 反向代理
+	- traefik
+	- ftp
+- 消息队列
+	- nsq
+	- gnatsd
+	- jocko
+	- centrifugo
+- 服务发现
+	- consul
+	- consul-template
+	- istio
+- KV存储
+	- etcd
+	- bolt
+	- badger
+- 负载均衡
+	- seesaw
+	- fabio
+
+## 独立服务 ^f4b00dbe-e078-1eec
+- CI/CD
+	- gogs
+	- giea
+- Web服务器
+	- caddy
+- 监控系统
+	- prometheus
+- 数据库
+	- influxdb
+	- cockroach
+	- tidb
+	- cayley
+	- noms
+	- vitess
+	- dgraph
+	- kingshard
+	- ledisdb
+	- goleveldb
+- 对象存储服务
+	- minio
+- 文件系统
+	- seaweedfs
+	- go-ipfs
+- 消息服务器
+	- centrifugo
+	- gorush
+- 集群管理
+	- nomand
+	- gaia
+- 数据采集软件
+	- pholcus
+	- ferret
+- 应用系统
+	- goim
+
+## web网站 ^cf861b22-d007-d6a9
+- 建站工具
+	- hugo
+	- websocketd
+
+## 系统工具 ^c6b80b8b-c506-95bd
+- 同步工具
+	- syncthing
+	- oklog
+- 证书工具
+	- mkcert
+- 流量重放
+	- goreplay/gor
+- 文件备份
+	- restic
+- 负载测试
+	- vegeta
+	- boom
+	- k6
+	- hey
+- 系统监控
+	- telegraf
+	- gopsutil
+- 任务管理
+	- realize
+- 扫描渗透
+	- vuls
+	- gitleaks
+- web交互
+	- gotty
+	- wuzz
+- HTTP客户端
+	- httpstat
+	- bat
+- 配置管理
+	- confd
+
+## go辅助工具 ^876c00fc-2fb9-f2ce
+- 程序调试
+	- delve
+- 程序监控
+	- termui
+	- go-metrics
+	- checkup
+	- gops
+- 程序分析
+	- uber/go-torch
+- 依赖管理
+	- dep
+	- glide
+	- gpdep
+	- gpbendor
+	- gb
+- 程序测试
+	- ginkgo
+	- goss
+	- go-fuzz
+	- goconvey
+- 文件生成
+	- go-swagger
+- 程序发布
+	- go-releaser
+- REPL
+	- gore
+	- go-pry
+
+## 其他工具 ^1fbb8390-0fa3-5a93
+- 文本编辑器
+	- micro
+- 比特币
+	- go-ethereum
+	- btcd
+
+## 开发框架 ^9699d711-d06a-475f
+- web框架
+	- gin
+	- beego
+	- martini
+	- revel
+	- echo
+	- isis
+	- negroni
+	- gorilla
+	- buffalo
+	- goproxy
+	- go-restful
+	- graphql
+- 路由
+	- httprouter
+- 微服务
+	- go-kit/kit
+	- go-micro
+	- goa
+	- kite
+- RPC
+	- grpc-go
+	- grpc-gateway
+	- rpcx
+- 数据库
+	- mysql
+	- gorm
+	- sqlx
+	- gorp
+	- xorm
+	- redigo
+	- redis
+	- mgo
+	- elastic
+- 命令行
+	- cobra
+	- urfave/cli
+	- promptui
+	- fatih/color
+- 日志
+	- zap
+	- logrus
+- 网页分析
+	- goquery
+- 文件/文本解析
+	- blackfriday
+	- xlsx
+	- gofpdf
+	- go-yaml/yaml
+	- toml
+- 序列化
+	- golang/protobuf
+	- gogo/protobuf
+	- gopacket
+	- gsion
+	- ffjson
+	- go-simplejson
+	- structs
+	- go-spew
+- 高级数据结构
+	- go-datastructures
+	- gods
+- GUI
+	- qt
+	- fyne
+	- walk
+- APP
+	- app
+	- go-astilectron
+- 单元测试
+	- testify
+- 错误处理
+	- pkg/errors
+- 任务管理
+	- robfig/cron
+- 嵌入式设备
+	- gobot
+- 文本搜索
+	- bleve
+- 分布式计算
+	- netstack
+	- protoactor-go
+- git
+	- go-git
+
+## 数据工具
+- 机器学习
+	- goioarn
+	- prose
+	- gocv
+- 数据处理
+	- patchyderm
+	- gonum
+
+## 游戏
+- nes
+
+## 编译器/解析器
+- pyuthon/grumpy
+- javascript
+- lua/gopher-lua
+- java/jvm-go

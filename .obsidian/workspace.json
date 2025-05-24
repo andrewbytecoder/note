@@ -4,19 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "ef39451f89a049b0",
+        "id": "68aefa4efb40f585",
         "type": "tabs",
         "children": [
           {
-            "id": "704e1297a1b5aa1a",
+            "id": "d944124274a0df5f",
             "type": "leaf",
             "state": {
-              "type": "mindmapView",
+              "type": "markdown",
               "state": {
-                "file": "mindmap/性能优化.md"
+                "file": "go/go.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "blocks",
-              "title": "性能优化"
+              "icon": "lucide-file",
+              "title": "go"
             }
           }
         ]
@@ -51,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "镜像",
+                "query": "docker save",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -138,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "mindmap/性能优化.md",
+                "file": "go/go.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "性能优化 的大纲"
+              "title": "go 的大纲"
             }
           },
           {
@@ -236,20 +238,29 @@
       "periodic-notes:Open today": false
     }
   },
-  "active": "704e1297a1b5aa1a",
+  "active": "d944124274a0df5f",
   "lastOpenFiles": [
+    "mindmap/go开源项目.md",
+    "mindmap/性能优化.md",
+    "go/pprof.md",
+    "未命名.canvas",
+    "k8s/kubernetes/命令.md",
+    "go/go.md",
+    "k8s/kubernetes/网络.md",
+    "k8s/kubernetes/基础知识.md",
+    "k8s/kubernetes/组件.md",
+    "k8s/etcd/etcd.md",
+    "架构/redis.md",
+    "架构/微服务设计.md",
+    "Excalidraw/Scripts/Downloaded/Organic Line.md",
+    "k8s/prometheus/kube-prometheus.md",
+    "k8s/prometheus/Alertmanager.md",
     "k8s/网络/calico.md",
     "k8s/docker/docker加载的软件.md",
     "linux/命令行.md",
-    "mindmap/性能优化.md",
-    "k8s/kubernetes/命令.md",
     "go/go code.md",
-    "go/go.md",
-    "架构/微服务设计.md",
-    "架构/redis.md",
     "架构/attachments/Pasted image 20250506223922.png",
     "架构/attachments/Pasted image 20250506223828.png",
-    "k8s/kubernetes/基础知识.md",
     "架构/attachments/Pasted image 20250505233124.png",
     "架构/attachments/Pasted image 20250505230730.png",
     "架构/微服务设计.excalidraw.md",
@@ -258,17 +269,9 @@
     "工作记录.md",
     "工作看板.md",
     "架构/kubernetes.excalidraw.md",
-    "k8s/etcd/etcd.md",
     "Excalidraw/calico.excalidraw.md",
     "Excalidraw/k8s.excalidraw.md",
-    "Excalidraw/kube-prometheus.excalidraw.md",
     "架构/attachments/Pasted image 20250428150436.png",
-    "Excalidraw/Scripts/Downloaded/Expand rectangles horizontally keep text centered.md",
-    "架构/redis.excalidraw.md",
-    "k8s/prometheus/prometheus基础.md",
-    "k8s/prometheus/Alertmanager.md",
-    "k8s/prometheus/kube-prometheus.md",
-    "utils/工具集.md",
     "utils/attachments/Pasted image 20250425133357.png",
     "k8s/prometheus/attachments/Pasted image 20250423170607.png",
     "Excalidraw/Scripts/Downloaded/PDF Page Text to Clipboard.svg",
