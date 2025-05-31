@@ -1,15 +1,17 @@
 
 
+## image相关
+
 ### **1. `imagePullPolicy` 的三种模式**
 
 ```yaml
 containers:
-        - name: my-container
-          image: 10.161.40.240:30003/my/lab:latest
-          imagePullPolicy: IfNotPresent          
-          volumeMounts:
-            - name: config-volume
-              mountPath: /etc/nginx
+- name: my-container
+  image: 10.161.40.240:30003/my/lab:latest
+  imagePullPolicy: IfNotPresent          
+  volumeMounts:
+	- name: config-volume
+	  mountPath: /etc/nginx
 ```
 
 Kubernetes 支持以下三种 `imagePullPolicy` 模式：
@@ -41,3 +43,18 @@ Kubernetes 支持以下三种 `imagePullPolicy` 模式：
 
 ---
 
+## 生命周期管理
+
+```yaml
+containers:
+- name: my-container
+  image: 10.161.40.240:30003/my/lab:latest
+  imagePullPolicy: IfNotPresent          
+  lifecycle:
+	postStart: # 容器启动后立即执行一个指定的操作，执行失败会导致容器启动失败
+		exec:
+			command: ["/bin/sh", "-c", "echo hello from the postStart handler"]
+	preStop: # 容器被杀死之前，收到 SIGKILL信号时，只有该命令执行成功才允许容器被杀死
+		exec:
+			command: ["/usr/sbin/nginx", "-s", "quit"]
+```
