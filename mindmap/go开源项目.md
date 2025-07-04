@@ -6,7 +6,7 @@ mindmap-plugin: basic
 
 # go
 
-## 云计算 ^4e28324c-c076-94c8
+## 云计算
 - 容器
 	- moby
 	- k8s
@@ -22,7 +22,7 @@ mindmap-plugin: basic
 	- go-cloud
 	- go-github
 
-## 中间件 ^9d6d2732-2a5a-3854
+## 中间件
 - 反向代理
 	- traefik
 	- ftp
@@ -145,7 +145,7 @@ mindmap-plugin: basic
 	- gore
 	- go-pry
 
-## 其他工具 ^1fbb8390-0fa3-5a93
+## 其他工具
 - 文本编辑器
 	- micro
 - 比特币
