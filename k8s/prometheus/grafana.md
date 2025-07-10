@@ -50,3 +50,20 @@ GF_<SectionName>_<KeyName>=<Value>
   value: "30"
 ```
 
+
+#### 关闭匿名登录
+关闭匿名登录要及时调整rotate的时间，否者默认情况下可能会导致大批量的rotate请求，请求url为 `/api/user/auth-tokens/rotate`
+
+```yaml
+# 关闭匿名登录
+- name: GF_AUTH_ANONYMOUS_ENABLED
+  value: "false"
+# 在关闭匿名登录之后，这里需要及时设置Token rota的时间间隔
+- name: GF_AUTH_TOKEN_ROTATION_INTERVAL_MINUTES
+  value: "30"
+- name: GF_AUTH_LOGIN_MAXIMUM_INACTIVE_LIFETIME_DURATION
+  value: "7d"
+- name: GF_AUTH_LOGIN_MAXIMUM_LIFETIME_DURATION
+  value: "30d"
+```
+

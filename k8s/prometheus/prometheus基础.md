@@ -143,7 +143,7 @@ $ kubectl apply --server-side -Rf manifests
 kubectl create -f setup/  
 kubectl create -f ./
 ```
-=======
+
 
 
 ### 数据类型
