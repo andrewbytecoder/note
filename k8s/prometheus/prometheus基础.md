@@ -112,9 +112,6 @@ spec:
 ```
 
 
-
-
-<<<<<<< HEAD
 ## `kube-promethsu`
 
 
@@ -155,16 +152,73 @@ kubectl create -f ./
 - `string` 字符串类型
 
 
->>>>>>> ab486d3337d20f9aa163b786caeec42c798bce40
-
-
-
-
-
-
 
 ## node_export 
 
 - node export 支持黑白名单，可以裁减掉部分指标的采集，这样才能降低之对主机性能的消耗
 - 支持采集指定目录下符合指标标准的数据
 - prometheus可以通过 `param` 配置指定 `node_export` 采集哪些数据，相当于prometheus采集数据时可以指定白名单
+
+
+
+
+## `promtool`
+
+`promtool` 是 Prometheus 提供的一个命令行工具，主要用于验证配置文件的正确性、调试规则和告警，以及对快照数据进行检查。
+
+### 1. 验证 Prometheus 配置文件
+
+在修改或更新 Prometheus 的配置文件之后，可以使用 `promtool` 来检查配置文件是否有效，避免因配置错误导致 Prometheus 服务无法正常启动。
+
+```bash
+promtool check config /path/to/prometheus.yml
+```
+
+- `/path/to/prometheus.yml`：替换为你的 Prometheus 配置文件的实际路径。
+
+如果配置文件没有问题，`promtool` 不会输出任何信息；如果有问题，则会返回具体的错误信息。
+
+### 2. 检查告警规则
+
+Prometheus 支持定义告警规则来监控特定条件并触发告警。使用 `promtool` 可以确保这些规则文件是有效的。
+
+假设你的告警规则文件位于 `/etc/prometheus/rules.yml`，你可以这样检查：
+
+```bash
+promtool check rules /etc/prometheus/rules.yml
+```
+
+这将验证规则文件中的语法是否正确，并提供有关任何错误的反馈。
+
+### 3. 调试告警规则
+
+除了检查规则文件外，还可以使用 `promtool` 对特定时间点的数据进行告警规则的评估，这对于调试很有帮助。
+
+首先，你需要从 Prometheus 获取一个即时查询结果的快照（通常通过 API），然后使用 `promtool` 进行调试：
+
+```bash
+promtool debug rules /path/to/rules.yml --time="2025-07-14T11:27:00Z" --data=/path/to/instant-query-data.json
+```
+
+这里，`/path/to/instant-query-data.json` 是包含查询结果快照的 JSON 文件，`--time` 参数指定了评估的时间点。
+
+### 4. 快照检查
+
+如果你需要检查 Prometheus 快照数据的一致性和完整性，可以使用 `promtool` 的快照检查功能：
+
+```bash
+promtool check tsdb /path/to/snapshot_directory
+```
+
+这里的 `/path/to/snapshot_directory` 应该指向你想要检查的快照目录。
+
+### 5. 数据查询与分析
+
+虽然不是直接由 `promtool` 提供的功能，但结合 `curl` 或其他 HTTP 客户端工具，你可以使用 Prometheus 的 API 来执行查询，这对于调试非常有用。例如：
+
+```bash
+curl 'http://localhost:9090/api/v1/query?query=up&time=2025-07-14T11:27:00Z'
+```
+
+这条命令会查询 Prometheus 在指定时间点的 `up` 指标值。
+
