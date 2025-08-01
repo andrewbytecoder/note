@@ -35,6 +35,17 @@ go mod tidy
 go mod vendor
 ```
 
+### 降低依赖包版本
+如果部分依赖库的版本需要进行降低，需要在当前库执行 `go get xxx@{version}` 之后在下载依赖包
+
+```bash
+# 将 sessions 从 v1.1.4
+go get github.com/gorilla/sessions@v1.1.3
+# 在更新本地库依赖
+go mod tidy 
+go mod vendor
+```
+
 
 
 
@@ -87,5 +98,25 @@ fi
 
 
 
+
+## go test
+
+`go test` 会编译所有 `*_test.go` 文件的包，这些文件可以包含 **功能测试、banchmark测试、模糊测试。** 所有以 `_` 和 `.` 开头的文件都会被忽略，包括 `_test.go`
+
+在 `go test` 前会运行 `go vet` 测试文件签名问题，如果在 `go vert` 过程中发现问题，将停止运行 `go test`。
+
+**`go test` 的两种模式：**
+
+- `go test` 编译运行当前文件测试文件。侧重模式下不 `caching`
+- `go test .` ，`go test math`，`go test ./...`
+
+### 其他参数
+- `-benchtime t`：指定测试时间，比如 1s 指定运行 1s
+- `-count n` : 指定运行多少次用例。如果 `-cpu` 指定了 cpu 数量，运行次数将会是 `[n * cpu]`
+- `-cover`：输出代码测试覆盖率
+- `-json` ：以json方式输出测试报告
+- `-failfast` ：一个测试用例失败后不去测试其他的测试用例
+- `-run regexp`：指定运行测试的规则
+- `-cpu 1,2,4`：指定 cpu 数量，会基于一个 cpu 跑一起，基于 2 个 cpu 跑一次，基于 4 个跑一次。对于benchmarks和模糊测试有意义。
 
 
