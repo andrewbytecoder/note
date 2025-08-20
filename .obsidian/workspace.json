@@ -4,35 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "2d5f2edf026c936e",
+        "id": "68aefa4efb40f585",
         "type": "tabs",
         "children": [
           {
-            "id": "08ae49ddb84ef7a3",
+            "id": "d944124274a0df5f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "go/go.md",
+                "file": "k8s/kubernetes/命令.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "go"
-            }
-          },
-          {
-            "id": "2ea8e927e256e4cd",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://chaosblade-io.gitbook.io/chaosblade-help-zh-cn/blade-create-network-loss",
-                "title": "blade create network loss | chaosblade-help-zh-CN",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "blade create network loss | chaosblade-help-zh-CN"
+              "title": "命令"
             }
           }
         ]
@@ -67,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "gen",
+                "query": "port-forward",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -92,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 276.5
+    "width": 211.5
   },
   "right": {
     "id": "208dd91899ac8bed",
@@ -154,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "go/go.md",
+                "file": "k8s/kubernetes/命令.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "go 的大纲"
+              "title": "命令 的大纲"
             }
           },
           {
@@ -226,16 +212,6 @@
               "icon": "checkmark",
               "title": "Todo List"
             }
-          },
-          {
-            "id": "cbf7ae54bc74d22d",
-            "type": "leaf",
-            "state": {
-              "type": "mp-preview",
-              "state": {},
-              "icon": "eye",
-              "title": "公众号预览"
-            }
           }
         ],
         "currentTab": 3
@@ -262,55 +238,54 @@
       "periodic-notes:Open today": false
     }
   },
-  "active": "08ae49ddb84ef7a3",
+  "active": "ffa890cc37419301",
   "lastOpenFiles": [
-    "k8s/kubernetes/k3s.md",
-    "网络/chaosblade.md",
-    "linux/脚本.md",
-    "linux/命令行.md",
-    "go/pprof.md",
+    "linux/CPU/CPU问题排查.md",
+    "linux/CPU",
     "go/go.md",
-    "go/go code.md",
-    "k8s/kubernetes/container.md",
+    "linux/IO",
+    "mindmap/go开源项目.md",
+    "mindmap/性能优化.md",
+    "go/pprof.md",
+    "未命名.canvas",
     "k8s/kubernetes/命令.md",
     "k8s/kubernetes/网络.md",
-    "k8s/kubernetes/问题排查工具.md",
-    "k8s/kubernetes/组件.md",
-    "k8s/prometheus/prometheus基础.md",
     "k8s/kubernetes/基础知识.md",
+    "k8s/kubernetes/组件.md",
+    "k8s/etcd/etcd.md",
+    "架构/redis.md",
     "架构/微服务设计.md",
-    "k8s/prometheus/grafana.md",
-    "k8s/prometheus/Alertmanager.md",
+    "Excalidraw/Scripts/Downloaded/Organic Line.md",
     "k8s/prometheus/kube-prometheus.md",
-    "mindmap/性能优化.md",
-    "linux/CPU/CPU.md",
-    "linux/IO/IO.md",
-    "utils/wireshark.md",
-    "utils/信息记录.md",
-    "utils/工具集.md",
-    "utils/git.md",
-    "mindmap/go开源项目.md",
-    "未命名.canvas",
-    "架构/attachments/Pasted image 20250613152554.png",
-    "网络/attachments/tun-B2X1RgPF.svg",
-    "网络/attachments/linux-namespace-X9XifakO.svg",
-    "网络/attachments/Pasted image 20250603134039.png",
-    "网络/attachments/Pasted image 20250603134004.png",
-    "网络/attachments/Pasted image 20250603133804.png",
-    "网络/attachments/Pasted image 20250603133702.png",
-    "网络/attachments/bridge-call-iptables-Ca9l8Wli.svg",
-    "网络/attachments/2322324789-64856c9a48fc5_fix732.webp",
-    "网络/attachments/2322324789-64856c9a48fc5_fix732 1.webp",
-    "网络/attachments",
-    "网络/协议",
-    "网络/协议/attachments",
-    "linux/CPU",
-    "linux/IO",
+    "k8s/prometheus/Alertmanager.md",
+    "k8s/网络/calico.md",
+    "k8s/docker/docker加载的软件.md",
+    "linux/命令行.md",
+    "go/go code.md",
+    "架构/attachments/Pasted image 20250506223922.png",
+    "架构/attachments/Pasted image 20250506223828.png",
+    "架构/attachments/Pasted image 20250505233124.png",
+    "架构/attachments/Pasted image 20250505230730.png",
+    "架构/微服务设计.excalidraw.md",
+    "Excalidraw/ebpf.excalidraw.md",
+    "架构/kubernetes.md",
+    "工作记录.md",
+    "工作看板.md",
+    "架构/kubernetes.excalidraw.md",
+    "架构/attachments/Pasted image 20250428150436.png",
+    "utils/attachments/Pasted image 20250425133357.png",
+    "k8s/prometheus/attachments/Pasted image 20250423170607.png",
+    "Excalidraw/Scripts/Downloaded/PDF Page Text to Clipboard.svg",
+    "Excalidraw/Scripts/Downloaded/Organic Line.svg",
     "k8s/网络",
+    "utils/attachments/Pasted image 20250416113822.png",
     "mindmap/BC31556.tmp",
     "架构/attachments",
     "架构",
     "mindmap",
+    "Excalidraw/attachments",
+    "linux/attachments",
+    "k8s/docker",
     "canvas.canvas"
   ]
 }
