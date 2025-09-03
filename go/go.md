@@ -120,3 +120,57 @@ fi
 - `-cpu 1,2,4`：指定 cpu 数量，会基于一个 cpu 跑一起，基于 2 个 cpu 跑一次，基于 4 个跑一次。对于benchmarks和模糊测试有意义。
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 工程常用开源库
+
+###  ratelimiter - 限流限频
+- 漏桶
+[https://github.com/uber-go/ratelimit](https://github.com/uber-go/ratelimit)
+- 令牌桶
+https://golang.org/x/time/rate
+
+### circuit breaker 熔断器
+[https://github.com/sony/gobreaker](https://github.com/sony/gobreaker)
+
+### cache
+- interface
+[https://github.com/karlseguin/ccache](https://github.com/karlseguin/ccache)
+[https://github.com/VictoriaMetrics/fastcache](https://github.com/VictoriaMetrics/fastcache)
+[https://github.com/hypermodeinc/ristretto](https://github.com/hypermodeinc/ristretto)
+
+- ringbuffer
+[https://github.com/coocood/freecache](https://github.com/coocood/freecache)
+[https://github.com/allegro/bigcache](https://github.com/allegro/bigcache)
+
+
+
+
+### json处理
+
+[https://github.com/tidwall/gjson](https://github.com/tidwall/gjson)
+[https://github.com/tidwall/sjson](https://github.com/tidwall/sjson)
+
+
+### 格式转换
+- 类型转换，避免使用丑陋的strconv
+[https://github.com/spf13/cast](https://github.com/spf13/cast)
