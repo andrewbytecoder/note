@@ -85,6 +85,13 @@ fi
 ```
 
 
+## `go run`
+
+```bash
+# 运行go程序过程中，打印详细的gc过程，用于分析内存泄露 
+GODEBUG=gctrace=1 go run gColl.go
+```
+
 
 ## `go get`
 ### `go get` 标记
