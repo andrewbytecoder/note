@@ -71,6 +71,9 @@ prometheus的服务发现：
 
 
 
+
+
+
 ## `prometheus operator`
 
 
@@ -222,3 +225,53 @@ curl 'http://localhost:9090/api/v1/query?query=up&time=2025-07-14T11:27:00Z'
 
 这条命令会查询 Prometheus 在指定时间点的 `up` 指标值。
 
+
+
+
+## 常见问题排查
+
+### pprof 数据获取
+
+1. 确保 Prometheus 启动时包含：
+```bash
+--web.enable-pprof
+```
+
+2. 使用 `curl` 下载不同类型的 pprof 数据
+- CPU Profiling(30s 采样)
+```bash
+curl -o profile.prof 'http://${IP}:9090/debug/pprof/profile?seconds=30'
+```
+
+- Heap Memory (堆内存分配)
+```bash
+curl -o heap.prof http://${IP}:9090/debug/pprof/heap
+```
+
+- Goroutines堆栈
+```bash
+curl -o goroutine.prof http://${IP}:9090/debug/pprof/goroutine?debug=2
+```
+
+- Block Profile (阻塞分析)
+```bash
+curl -o block.prof http://${IP}:9090/debug/pprof/block
+```
+
+- Mutex Contention (互斥锁争用)
+```bash
+curl -o mutex.prof http://${IP}:9090/debug/pprof/mutex
+```
+
+3. 使用 `go tool` 生成报告
+```bash
+# 启用go tool分析，然后输入 png命令生成报告
+go tool pprof heap.prof
+go tool pprof profile.prof
+
+# 生成调用图 
+go tool pprof -png heap.prof > heap.png 
+# 生成火焰图（推荐），在线查看
+go tool pprof -http=:8080 profile.prof
+go tool pprof -http=${IP}:8080 profile.prof
+```
