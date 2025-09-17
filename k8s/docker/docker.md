@@ -1,5 +1,21 @@
 
 
+## 常用命令
+
+### 镜像操作
+
+#### 将镜像创建一个容器但是不执行用于查看文件和复制文件
+```bash
+# 创建一个容器，但是不运行
+docker create --name skopeo-temp ananace/skopeo:latest
+# 将容器中的文件复制出来
+docker cp skopeo-temp:/skopeo ./skopeo
+# 将容器中所有文件，按照文件列表导出一份列表
+docker export skopeo-temp | tar -t > file-list.txt
+```
+
+
+
 
 
 - pdf2zh

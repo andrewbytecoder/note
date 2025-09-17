@@ -7,13 +7,27 @@
 ![](attachments/internal_architecture.svg)
 
 
+## 命令行查看信息
+
+### 使用命令行查看prometheus有多少series
+```bash
+curl -g 'http://172.38.187.183:30090/api/v1/status/tsdb' | jq '.data.headStats.numSeries'
+```
+
+### 使用命令行查询指标数据
+
+```bash
+curl -s "http://172.38.187.183:30090/api/v1/query" \ --data-urlencode 'query=rate(prometheus_http_requests_total{handler="/api/v1/query"}[5m])' | jq
+```
+
+### 按照job分组统计每个Job有多少个target
+```bash
+curl -s "http://172.38.187.183:30090/api/v1/targets" | jq ' .data.activeTargets[] | .labels.job as $job | {job: $job} ' | jq -s 'group_by(.job) | map({job: .[0].job, count: length}) | sort_by(-.count)'
+```
 
 
 
 ## 信息查看
-
-
-
 ### 查看配置
 
 通过访问网址 : `ip:port/config` 即可查看启动状态下的 `prometheus` 的配置
@@ -33,6 +47,12 @@ http://10.161.40.240:30090/config
 ### 查看pprof
 
 通过查看网页： `ip:port/debug/pprof` 能查看prometheus pprof数据，用于性能问题排查
+
+### 查看通过外接通过监听之后生成的配置信息
+
+```bash
+cat  /etc/prometheus/config_out/prometheus.env.yaml
+```
 
 
 
@@ -275,3 +295,16 @@ go tool pprof -png heap.prof > heap.png
 go tool pprof -http=:8080 profile.prof
 go tool pprof -http=${IP}:8080 profile.prof
 ```
+
+
+
+### top显示RSS内存和heap抓取的不一致
+#### 详细解释：Prometheus 内存组成的五大块
+
+| 内存区域                  | 是否被 pprof heap 统计 | 大小估算        | 说明                           |
+|-----------------------|-------------------|-------------|------------------------------|
+| 1. Go 堆内存（Heap）       | ✅ 是               | ~300–500 MB | pprof 显示的就是这部分               |
+| 2. TSDB mmap 文件映射     | ❌ 否               | 1.5–2 GB+   | 最大头！WAL 和 block 文件通过 mmap 加载 |
+| 3. Goroutine 栈 & 内部结构 | ❌ 否               | ~100–300 MB | 每个 Goroutine 约 2KB 栈空间       |
+| 4. 操作系统 Page Cache    | ❌ 否               | 几百 MB       | 内核缓存磁盘文件，算在 RES 里            |
+| 5. 程序二进制、库、元数据        | ❌ 否               | ~100 MB     | ELF、符号表、VDSO、VVAR 等          |
