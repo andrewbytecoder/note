@@ -89,6 +89,13 @@ prometheus的服务发现：
 [服务发现](https://yunlzheng.gitbook.io/prometheus-book/part-iii-prometheus-shi-zhan/readmd/service-discovery-with-kubernetes)
 
 
+## 关键参数
+
+```bash
+# 错误配置示例，如果Min max相同，wal将无法整理，最终碎片多会导致prometheus的内存升高，因为tsdb中的数据会经过mmap映射到内存中
+- --storage.tsdb.max-block-duration=30m
+- --storage.tsdb.min-block-duration=30m
+```
 
 
 
