@@ -4,6 +4,7 @@
 ## 查找CPU占用内存高的进程
 
 1. 使用 `top -H` 命令查看
+
 2. 按 `f` 打开 ppid查看占用CPU高的进程的父进程PID是多少
 ```bash
     PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND    PPID   UID  SUID   GID GROUP      TPGID CGROUPS 
@@ -13,6 +14,7 @@
  523669 2030      20   0  772692   9720   1200 R  38.4   0.0  11:28.44 kubectl 3966123  2030  2030  2030 2030          -1 0::/ku+ 
 3378302 2030      20   0  772180  10908   2000 R  37.6   0.0  34:29.95 kubectl 3966123  2030  2030  2030 2030          -1 0::/ku+ 
 ```
+
 3. 使用 `ps -ef | grep 3966123` 找出对应的进程
 ```bash
 2030     3387428 3966123 51 May27 ?        06:38:32 kubectl create token prometheus-k8s -n openshift-monitoring

@@ -43,7 +43,7 @@ mindmap-plugin: basic
 	- seesaw
 	- fabio
 
-## 独立服务 ^f4b00dbe-e078-1eec
+## 独立服务
 - CI/CD
 	- gogs
 	- giea
@@ -79,12 +79,17 @@ mindmap-plugin: basic
 - 应用系统
 	- goim
 
-## web网站 ^cf861b22-d007-d6a9
+## web网站
 - 建站工具
 	- hugo
 	- websocketd
+- 认证工具
+	- 2FA
+		- pquerna / otp
+	- 动态图认证
+		- base64Captcha
 
-## 系统工具 ^c6b80b8b-c506-95bd
+## 系统工具
 - 同步工具
 	- syncthing
 	- oklog
@@ -152,7 +157,7 @@ mindmap-plugin: basic
 	- go-ethereum
 	- btcd
 
-## 开发框架 ^9699d711-d06a-475f
+## 开发框架
 - web框架
 	- gin
 	- beego
