@@ -13,6 +13,13 @@ ip:9093
 
 
 
+查看报警
+
+```bash
+amtool --alertmanager.url=http://localhost:9093 alert query
+```
+
+
 
 
 
