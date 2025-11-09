@@ -52,3 +52,31 @@ ip link show | grep "^64:"
 64: cali70d3ca51123@if4: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default 
     link/ether ee:ee:ee:ee:ee:ee brd ff:ff:ff:ff:ff:ff link-netns pod_netns
 ```
+
+
+
+
+## 常用命令
+
+```bash
+$ kubectl get ippool -o yaml
+apiVersion: v1
+items:
+  ...
+  kind: IPPool
+  spec:
+    allowedUses:
+    - Workload
+    - Tunnel
+    cidr: 100.64.0.0/10
+    ipipMode: Always
+    natOutgoing: true
+    nodeSelector: all()
+    vxlanMode: Never
+  ...
+```
+
+
+
+
+
