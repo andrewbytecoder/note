@@ -18,7 +18,9 @@
 ```
 
 
-### 查看对应Pod属于哪个网卡
+## 查看对应Pod属于哪个网卡
+
+### 网卡对查看方法
 
 ```bash
 kubectl exec -ti alertmanager-main-0 -n base-services -- sh -c 'cat /sys/class/net/eth0/iflink'
@@ -52,6 +54,68 @@ ip link show | grep "^64:"
 64: cali70d3ca51123@if4: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default 
     link/ether ee:ee:ee:ee:ee:ee brd ff:ff:ff:ff:ff:ff link-netns pod_netns
 ```
+
+### 路由表查看方
+1. 进入到Pod内部查看ip地址
+```bash
+/prometheus $ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: tunl0@NONE: <NOARP> mtu 1480 qdisc noop qlen 1000
+    link/ipip 0.0.0.0 brd 0.0.0.0
+4: eth0@if7: <BROADCAST,MULTICAST,UP,LOWER_UP,M-DOWN> mtu 1500 qdisc noqueue 
+    link/ether 66:76:a5:8c:fb:5f brd ff:ff:ff:ff:ff:ff
+    inet 100.70.244.246/32 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::6476:a5ff:fe8c:fb5f/64 scope link 
+       valid_lft forever preferred_lft forever
+```
+2. 进入到对应主机查看路由
+```bash
+[root@k8smaster-1 ~]# route -n
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         192.168.0.1     0.0.0.0         UG    100    0        0 enp0s3
+100.70.244.192  0.0.0.0         255.255.255.192 U     0      0        0 *
+100.70.244.208  0.0.0.0         255.255.255.255 UH    0      0        0 cali57c605ce2cc
+100.70.244.215  0.0.0.0         255.255.255.255 UH    0      0        0 cali20668973fa0
+100.70.244.219  0.0.0.0         255.255.255.255 UH    0      0        0 cali09fe7018ef7
+100.70.244.220  0.0.0.0         255.255.255.255 UH    0      0        0 cali1f45ed39910
+100.70.244.221  0.0.0.0         255.255.255.255 UH    0      0        0 cali989de1080ad
+100.70.244.222  0.0.0.0         255.255.255.255 UH    0      0        0 cali5459fa44f4f
+100.70.244.224  0.0.0.0         255.255.255.255 UH    0      0        0 cali1176d9871d1
+100.70.244.227  0.0.0.0         255.255.255.255 UH    0      0        0 cali1e6c2b85682
+100.70.244.236  0.0.0.0         255.255.255.255 UH    0      0        0 cali3dbf08c6d60
+100.70.244.237  0.0.0.0         255.255.255.255 UH    0      0        0 cali0e4f05f74fc
+100.70.244.238  0.0.0.0         255.255.255.255 UH    0      0        0 calic2eeda9bb38
+100.70.244.246  0.0.0.0         255.255.255.255 UH    0      0        0 caliee699845661
+192.168.0.0     0.0.0.0         255.255.255.0   U     100    0        0 enp0s3
+
+# 或者
+[root@k8smaster-1 ~]# ip r s 
+default via 192.168.0.1 dev enp0s3 proto static metric 100 
+blackhole 100.70.244.192/26 proto bird 
+100.70.244.208 dev cali57c605ce2cc scope link 
+100.70.244.215 dev cali20668973fa0 scope link 
+100.70.244.219 dev cali09fe7018ef7 scope link 
+100.70.244.220 dev cali1f45ed39910 scope link 
+100.70.244.221 dev cali989de1080ad scope link 
+100.70.244.222 dev cali5459fa44f4f scope link 
+100.70.244.224 dev cali1176d9871d1 scope link 
+100.70.244.227 dev cali1e6c2b85682 scope link 
+100.70.244.236 dev cali3dbf08c6d60 scope link 
+100.70.244.237 dev cali0e4f05f74fc scope link 
+100.70.244.238 dev calic2eeda9bb38 scope link 
+100.70.244.246 dev caliee699845661 scope link 
+192.168.0.0/24 dev enp0s3 proto kernel scope link src 192.168.0.122 metric 100 
+```
+
+经过另个对比可以看到网络是经过 `100.70.244.246` 发送出去的
+
 
 
 
