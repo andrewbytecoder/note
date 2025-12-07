@@ -19,6 +19,18 @@ go env -w GOOS=windows
 ```
 
 
+### 在windows上设置环境变量
+在linux上直接将需要设置的环境变量放到可执行文件之前即可实现环境变量的设置，但是在windows上需要使用 `$env` 进行环境变量的指定
+- linux
+```bash
+GODEBUG=gctrace=1 ./app
+```
+- windows
+```bash
+$env:GODEBUG="gctrace=1" ./app.exe
+```
+
+
 ## `go mod`
 ### 清理依赖缓存
 如果某些库已经删除，但是其他库存在依赖关系，可以使用一下命令清理mod缓存
@@ -91,7 +103,10 @@ fi
 # 运行go程序过程中，打印详细的gc过程，用于分析内存泄露 
 GODEBUG=gctrace=1 go run gColl.go
 ```
-
+如果在windows上需要使用
+```bash
+$env:GODEBUG="gctrace=1" go run gColl.go
+```
 
 ## `go get`
 ### `go get` 标记
