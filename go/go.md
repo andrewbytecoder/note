@@ -143,8 +143,20 @@ $env:GODEBUG="gctrace=1" go run gColl.go
 
 
 
+#### 性能测试
 
-
+- 执行以下命令之后会在本地生成一个cpu.out文件
+```bash
+# 指定时间进行性能测试
+go test -bench=.  -benchtime=3s -cpuprofile cpu.out
+# 直接执行完
+go test -bench=.  -cpuprofile cpu.out
+```
+- 执行 `go tool pprof` 命令查看
+```bash
+go tool pprof cpu.out
+#  
+```
 
 
 
