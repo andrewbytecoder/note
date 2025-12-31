@@ -175,6 +175,8 @@ go tool pprof cpu.out
 
 
 
+
+
 ## 工程常用开源库
 
 ###  ratelimiter - 限流限频
@@ -208,3 +210,16 @@ https://golang.org/x/time/rate
 ### 格式转换
 - 类型转换，避免使用丑陋的strconv
 [https://github.com/spf13/cast](https://github.com/spf13/cast)
+
+
+## 漏洞扫描
+
+使用以下库可以实现对go应用的CVE漏洞扫描：
+```
+ go install golang.org/x/vuln/cmd/govulncheck@latest
+```
+
+使用示例
+```
+govulncheck -mode=binary [flags] [binary]
+```
