@@ -97,6 +97,11 @@ prometheus的服务发现：
 - --storage.tsdb.min-block-duration=30m
 ```
 
+## TSDB
+
+
+prometheus整点，每隔两个小时，如果数据量足够大，会进行一次wal压缩，会导致大量的数据读取，可能会导致整点IO上升
+
 
 
 
@@ -302,6 +307,27 @@ go tool pprof -png heap.prof > heap.png
 go tool pprof -http=:8080 profile.prof
 go tool pprof -http=${IP}:8080 profile.prof
 ```
+
+
+
+### 排查问题指标说明
+
+- `prometheus_http_requests_total` : http请求总数
+1. 请求总数中有返回标签，可以根据标签查看 `prometheus` 当前数据采集状态
+2. 通过 `sum` 等汉书来查看请求耗时等相关信息，查看那个 `pod` 的网络情况不好
+
+- `prometheus_http_request_duration_seconds_bucket` : http请求耗时
+1. 查看那个 `pod` 的网络情况不好，相应 `prometheus` 的数据采集不及时
+
+- `prometheus_target_scrape_pools_failed_total` : scrape失败总数
+1. 查询和 `target` 相关的指标，可以看那些指标抓取出现了问题
+
+[[prometheus#作业和实例]]
+每个job都会附带生成如下数据：
+- `up{job="<job-name>", instance="<instance-id>"}` ：如果实例健康即可访问，则为 `1` 如果抓取失败，则为 `0` 。 -- 可用于排查抓取的目标或者job是否正常
+- `scrape_duration_seconds{job="<job-name>", instance="<instance-id>"}` ：抓取的持续时间。 -- 可用于判断抓取目标是否健康，网络是否通畅，如果耗时异常升高可能是网络差或者被抓取对象响应慢导致的
+- `scrape_samples_scraped{job="<job-name>", instance="<instance-id>"}` ：目标暴露的样本数。 -- 用于裁剪指标，可以提前统计采集的所有指标数量
+
 
 
 
