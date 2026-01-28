@@ -1,5 +1,9 @@
 
 
+## etcdctl
+
+
+	### 查询节点状态信息
 
 
 
@@ -9,9 +13,9 @@
 
 - 查询当前节点状态
 ```bash
-./etcdctl --endpoints=$ENDPOINTS endpoint status --write-out=table
+ETCDCTL_API=3 etcdctl --endpoints=$ENDPOINTS endpoint status --write-out=table
 # 使用示例
- etcdctl  --endpoints=10.161.48.46:12256,10.161.48.45:12256 endpoint status --write-out=table
+ETCDCTL_API=3 etcdctl  --endpoints=10.161.48.46:12256,10.161.48.45:12256 endpoint status --write-out=table
 ```
 
 
