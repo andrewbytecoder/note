@@ -2,14 +2,6 @@
 
 
 
-
-
-
-
-
-
-
-
 ## yaml配置
 ### env
 
@@ -50,6 +42,7 @@ GF_<SectionName>_<KeyName>=<Value>
   value: "30"
 ```
 
+> 在grafana中，环境变量的优先级大于grafana.ini中的配置，如果环境变量和grafana.ini中不同，优先环境变量生效。但是环境变量中的配置并不会真的覆盖掉grafana.ini的配置，因此，当环境变量中配置了对应变量，并不能直接从grafana.ini中直观的看到
 
 #### 关闭匿名登录
 关闭匿名登录要及时调整rotate的时间，否者默认情况下可能会导致大批量的rotate请求，请求url为 `/api/user/auth-tokens/rotate`
