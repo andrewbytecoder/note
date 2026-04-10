@@ -46,5 +46,3 @@ CMD envsubst '$NGINX_PORT' < /etc/nginx/nginx.conf.template > /etc/nginx/nginx.c
 替换之后，配合k8s的 `env` 配置就能实现环境变量直接注入到 `nginx.conf` 文件
 
 
-
-
