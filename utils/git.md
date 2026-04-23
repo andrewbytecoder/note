@@ -70,6 +70,17 @@
 拉取代码
 
 
+
+
+
+## git checkout
+```bash
+# 当指定文件存在冲突的情况下，如果使用remote覆盖本地的，可以直接将指定文件checkout出来，默认覆盖
+git checkout -- go.mod go.sum
+```
+
+
+
 ## `git remote`
 
 ### 查看远程仓库地址
