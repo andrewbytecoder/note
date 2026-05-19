@@ -1,4 +1,18 @@
 
+## command 相关
+
+### 添加睡眠排查无法正常启动镜像问题
+通过添加 sleep命令，让镜像启动，但是先不实际执行，像睡眠一段时间，方便问题的排查
+- 镜像中某个配置文件不符合预期需要进行查看
+```yaml
+spec: 
+  containers: 
+  - name: your-container-name 
+    image: your-image:tag 
+    # 添加下面这两行，注释掉原来的 command 如果有 
+    command: ["/bin/sh", "-c", "sleep 3600"]
+```
+
 
 ## image相关
 
