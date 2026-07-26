@@ -1,0 +1,15 @@
+
+
+
+
+
+
+
+## 证书
+
+### 使用openssl一键生成证书
+
+```bash
+openssl req -x509 -nodes -days 365 -newkey rsa:2048  -keyout server.key  -out server.crt  -subj "/C=CN/ST=State/L=City/O=Organization/CN=localhost"
+```
+
