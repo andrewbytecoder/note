@@ -12,12 +12,16 @@ set GOOS=linux
 go env -w GOOS=linux
 ```
 切换回windows
-
 ```bash
 go env -w GOARCH=amd64
 go env -w GOOS=windows
 ```
 
+设置代理
+```bash
+# GOPROXY：模块代理，加速依赖下载（国内必须配置）
+go env -w GOPROXY=https://goproxy.cn,direct
+```
 
 ### 在windows上设置环境变量
 在linux上直接将需要设置的环境变量放到可执行文件之前即可实现环境变量的设置，但是在windows上需要使用 `$env` 进行环境变量的指定
@@ -58,7 +62,15 @@ go mod tidy
 go mod vendor
 ```
 
-
+```bash 
+# 模块管理
+go mod init github.com/user/project  # 初始化模块
+go mod tidy                           # 整理依赖（添加缺失的、删除未使用的）
+go mod download                       # 下载依赖到缓存
+go mod verify                         # 校验依赖完整性
+go mod graph                          # 查看依赖图
+go mod vendor                         # 将依赖复制到vendor目录
+```
 
 
 ## `go build`
@@ -70,6 +82,11 @@ go mod vendor
 `-v` 查看go build编译的代码包的名称，与  `-a` 标记搭配使用时会非常有用
 
 
+```bash
+# 编译构建
+go build -o myapp ./cmd/app     # 编译并指定输出名称
+go build -race ./...             # 启用竞态检测编译
+```
 
 打镜像里面的go程序需要启用静态编译
 ```bash
@@ -96,6 +113,14 @@ if [ $? -ne 0 ]; then
 fi
 ```
 
+## `go fmt`
+
+```bash
+# 代码格式化与静态检查
+go fmt ./...                     # 格式化代码
+go vet ./...                     # 静态分析，发现常见错误
+```
+
 
 ## `go run`
 
@@ -108,6 +133,12 @@ GODEBUG=gctrace=1 go run gColl.go
 $env:GODEBUG="gctrace=1" go run gColl.go
 ```
 
+```bash
+# 直接运行
+go run main.go                   # 编译并立即运行（不生成二进制文件）
+go run ./cmd/app                 # 运行指定包
+```
+
 ## `go get`
 ### `go get` 标记
 
@@ -118,7 +149,12 @@ $env:GODEBUG="gctrace=1" go run gColl.go
 `-insecure` 允许通过非安全的网络协议下载和安装代码包，HTTP就是这样的协议
 
 
-
+## `go doc`
+```bash
+# 文档与信息
+go doc fmt.Println               # 查看文档
+go doc -all fmt                  # 查看fmt包全部文档
+```
 
 
 ## go test
@@ -142,6 +178,15 @@ $env:GODEBUG="gctrace=1" go run gColl.go
 - `-cpu 1,2,4`：指定 cpu 数量，会基于一个 cpu 跑一起，基于 2 个 cpu 跑一次，基于 4 个跑一次。对于benchmarks和模糊测试有意义。
 
 
+### 测试
+```bash
+# 测试
+go test ./...                    # 运行所有测试
+go test -v ./...                 # 详细输出
+go test -race ./...              # 测试时启用竞态检测
+go test -cover ./...             # 测试覆盖率
+go test -bench=. -benchmem ./... # 基准测试+内存分配统计
+```
 
 #### 性能测试
 
@@ -155,7 +200,6 @@ go test -bench=.  -cpuprofile cpu.out
 - 执行 `go tool pprof` 命令查看
 ```bash
 go tool pprof cpu.out
-#  
 ```
 
 
