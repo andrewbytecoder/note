@@ -117,6 +117,29 @@ git log --oneline --graph --all --decorate
 repo:iovisor/bcc TRACEPOINT_PROBE path:tools
 ```
 
+## 修正错误用户名和邮箱
+如果提交的时候报当前使用名和邮箱与仓库中认证的不同，可以进行如下操作
+
+1. 如果确认所有的git仓库都需要进行修改，直接进行全局 修改，这样会影响电脑上的所有git仓库
+```bash
+git config --global user.email "yazhou.wang@gmail.com" 
+git config --global user.name "你的名字" # 建议也检查一下用户名是否正确
+```
+2. 仅修改当前项目配置，只影响当前git仓库
+```bash
+# 进入到你的git仓库目录
+cd Z:\work\publish
+# 修改当前仓库的配置
+git config user.email "yazhou.wang@gmail.com" 
+git config user.name "你的名字"
+```
+
+如果你再修正email和name之前已经执行了commit，commit默认会把你的用户名和邮箱写进去，你需要修正一下提交信息，再执行push
+```bash
+git commit --amend --reset-author --no-edit
+git push
+```
+
 
 
 ### 使用链接自动完成github上指定数据的搜索

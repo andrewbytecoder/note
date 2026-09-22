@@ -86,6 +86,31 @@ sh-5.1# ovs-vsctl --data=bare --no-heading --columns=name   find Interface exter
 15ccc127be7ca3e
 ```
 
+### 使用本地的tcpdump可执行文件抓取容器内的网络流量
+
+```bash
+# 查看网络地址，特别是 link-netns
+[root@worker2 core]# ip addr | grep 469a6b286dd1b48 -A 10
+91: 469a6b286dd1b48@if2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1400 qdisc noqueue master ovs-system state UP group default 
+    link/ether 3e:76:ac:99:1c:64 brd ff:ff:ff:ff:ff:ff link-netns e74465a5-5bbb-4fd5-be81-5a032092be8a
+    inet6 fe80::3c76:acff:fe99:1c64/64 scope link 
+       valid_lft forever preferred_lft forever
+#  link-netns e74465a5-5bbb-4fd5-be81-5a032092be8a   网卡UUID
+[root@worker2 core]# ip netns exec  e74465a5-5bbb-4fd5-be81-5a032092be8a ./tcpdump
+dropped privs to tcpdump
+tcpdump: verbose output suppressed, use -v[v]... for full protocol decode
+listening on eth0, link-type EN10MB (Ethernet), snapshot length 262144 bytes
+12:28:21.759565 IP worker2.z2.ameidc2.com.36118 > 10.225.32.73.etcd-client: Flags [P.], seq 766323013:766323037, ack 1279897928, win 510, options [nop,nop,TS val 3845428254 ecr 99831668], length 24
+12:28:21.760123 IP 10.225.32.73.etcd-client > worker2.z2.ameidc2.com.36118: Flags [P.], seq 1:31, ack 24, win 505, options [nop,nop,TS val 99835173 ecr 3845428254], length 30
+12:28:21.760132 IP worker2.z2.ameidc2.com.36118 > 10.225.32.73.etcd-client: Flags [.], ack 31, win 510, options [nop,nop,TS val 3845428254 ecr 99835173], length 0
+12:28:21.760237 IP worker2.z2.ameidc2.com.36118 > 10.225.32.73.etcd-client: Flags [P.], seq 24:41, ack 31, win 510, options [nop,nop,TS val 3845428254 ecr 99835173], length 17
+12:28:21.760769 IP 10.225.32.73.etcd-client > worker2.z2.ameidc2.com.36118: Flags [P.], seq 31:86, ack 41, win 505, options [nop,nop,TS val 99835174 ecr 3845428254], length 55
+12:28:21.760881 IP worker2.z2.ameidc2.com.36118 > 10.225.32.73.etcd-client: Flags [P.], seq 41:71, ack 86, win 510, options [nop,nop,TS val 3845428255 ecr 99835174], length 30
+12:28:21.761247 IP 10.225.32.73.etcd-client > worker2.z2.ameidc2.com.36118: Flags [P.], seq 86:103, ack 71, win 505, options [nop,nop,TS val 99835174 ecr 3845428255], length 17
+12:28:21.801294 IP worker2.z2.ameidc2.com.36118 > 10.225.32.73.etcd-client: Flags [.], ack 103, win 510, options [nop,nop,TS val 3845428296 ecr 99835174], length 0
+12:28:21.827792 IP worker2.z2.ameidc2.com.57640 > 10.161.46.81.domain: 58855+ PTR? 73.32.225.10.in-addr.arpa. (43)
+```
+
 
 
 ### 查看pod网卡的详细信息
