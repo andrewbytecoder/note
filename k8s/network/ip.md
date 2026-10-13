@@ -52,5 +52,43 @@ listening on eth0, link-type EN10MB (Ethernet), snapshot length 262144 bytes
 ```
 
 
+## vlan
+
+### 查看vlan的interface
+```bash
+[root@workernode-mcs-1 ~]# ip link show type vlan 
+3: nei_nad@ens18: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default qlen 1000
+    link/ether bc:24:11:92:39:cd brd ff:ff:ff:ff:ff:ff
+4: wai_nad@ens18: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default qlen 1000
+    link/ether bc:24:11:92:39:cd brd ff:ff:ff:ff:ff:ff
+5: node_ip@ens18: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default qlen 1000
+    link/ether bc:24:11:92:39:cd brd ff:ff:ff:ff:ff:ff
+```
+
+
+### 查看vlan ID
+这个ID和路由器上是对应的
+```bash
+[root@workernode-mcs-1 ~]# ip -d link show wai_nad
+4: wai_nad@ens18: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DEFAULT group default qlen 1000
+    link/ether bc:24:11:92:39:cd brd ff:ff:ff:ff:ff:ff promiscuity 0 allmulti 0 minmtu 0 maxmtu 65535 
+    vlan protocol 802.1Q id 33 <REORDER_HDR> addrgenmode none numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535 tso_max_size 65536 tso_max_segs 65535 gro_max_size 65536 gso_ipv4_max_size 65536 gro_ipv4_max_size 65536 
+```
+
+这里的 `id 33` 去交换机上找对应ID的vlan即可 
+
+
+## 查看网关是否可达
+
+### `ip neigh show` 
+指定 ip地址，查看二层网关是否可达。
+
+```bash
+> ip neigh show 10.161.40.6
+10.161.40.6 dev node_ip lladdr d4:4f:67:e9:c7:51 REACHABLE 
+```
+
+
+
 
 
