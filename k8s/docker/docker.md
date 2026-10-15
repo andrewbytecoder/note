@@ -1,6 +1,17 @@
 
 ## network
 
+## 从宿主机进入容器网络命名空间
+```bash
+# 获取docker容器ID
+docker inspect -f '{{.State.Pid}}' <container_id_or_name>
+# 获取docker容器ID
+docker inspect <container_id_or_name> --format '{{.State.Pid}}'
+# 进入到对应容器的网络命名空间
+sudo nsenter -t <pid> -n
+```
+
+
 
 ### network ls
 docker 网络类型以及网络列表
