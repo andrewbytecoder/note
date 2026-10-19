@@ -37,9 +37,13 @@ alertname="hytera-mcs01-trust-dmm_POD_MEMORY_USED_GT_CHECK_44703" host_ip="10.16
 ```
 
 
-
-
-
-
+## 配置
+### 验证当前配置模式下告警如何路由
+```bash
+amtool config routes test \
+  --alertmanager.url=http://127.0.0.1:9093 \
+  namespace=mcs01-prod severity=podcheck
+mcs01-prod/ysp-webhook-routing/podcheckReceiver
+```
 
 [Awesome Prometheus alerts](https://samber.github.io/awesome-prometheus-alerts/)
